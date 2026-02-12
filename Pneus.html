@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneu XBRI - Promoção</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .corpo-a3{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        .marca-pneu{
+            font-size: 2.5rem;
+            font-weight: 600;
+            background-color: bisque;
+            height: 5rem;
+            text-align: center;
+        }
+
+        .valor-vista{
+            display: flex;
+            flex-direction: row;
+            gap: 6rem;
+            background-color: blueviolet;
+        }
+
+        .valor-vista .titulo-valor{
+         font-weight: 800; 
+         font-size: 2rem;
+         width: 9rem;
+         align-items: center;
+         display: flex;
+         background-color: aquamarine;
+         line-height: 2rem;
+        }     
+        
+         .valor-vista .preco-vista{
+            color: red;
+            font-weight: 600;
+            font-size: 4rem;
+         }
+
+
+         .numero-parcelas{
+            font-size: 4rem;
+            font-weight: 600;
+         }
+
+         .texto-parcelas{
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+         }
+
+         .texto-parcelas p{
+             font-size: 1rem;
+             width: 2rem;
+         }
+
+
+         .parcelamento{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+         }
+
+         .info-parcelas{
+            background-color: blanchedalmond;
+            width: 11rem;
+         }
+
+         .parcelamento .valor-parcela{
+             color: red;
+             font-size: 4rem;
+             font-weight: 700;
+         }
+
+          .nota-adicional{
+            display: flex;
+            position: relative;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+          }
+
+           .nota-adicional p{
+            position: absolute;
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            font-size: 1.7rem;
+          }
+
+         .nota-adicional img{
+            width: 32rem;
+            height: 2rem;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="corpo-a3">
+            <img src="img/pneus.png" alt="" srcset="">
+            <!-- Nome e medida do pneu -->
+            <div class="nome-pneu">
+                <div class="marca-pneu">PNEU XBRI 265/65 R17</div>
+            </div>
+
+            <!-- Valor à vista -->
+            <div class="valor-vista">
+                <div class="titulo-valor">VALOR À VISTA:</div>
+               <div class="preco-vista"> 849,90</div>
+                </div>
+        
+
+            <!-- Linha decorativa -->
+            <div class="linha-decorativa"></div>
+
+            <!-- Parcelamento -->
+            <div class="parcelamento">
+                <div class="info-parcelas">
+
+                    <div class="numero-parcelas">4X</div>
+
+                    <div class="texto-parcelas">
+                        <p>SEM JUROS NO CARTÃO</p>
+                    <span class="cartao">PASSAÍ</span>
+
+                    </div>
+                </div>
+                <div class="valor-parcela">212,47</div>
+            </div>
+
+            <!-- Nota adicional -->
+            <div class="nota-adicional">
+               <p>ou em até 4X nos demais cartões.</p> 
+                 <img src="Icon/footer.jpeg" alt="" srcset="">
+            </div>
+           
+        </nav>
+    </div>
+</body>
+</html>
