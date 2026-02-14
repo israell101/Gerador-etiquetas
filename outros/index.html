@@ -59,16 +59,17 @@
       margin-bottom: 10px;
     }
 
+    /* Logo styles - CORREÇÃO PARA TAMANHO FIXO */
     .logo-img {
-      width: 50px !important;
-      height: 50px !important;
-      object-fit: contain !important;
+      width: 50px !important; /* Tamanho fixo */
+      height: 50px !important; /* Tamanho fixo */
+      object-fit: contain !important; /* Mantém a proporção */
       transition: all 0.3s ease;
     }
 
     .sidebar.collapsed .logo-img {
-      width: 50px !important;
-      height: 50px !important;
+      width: 50px !important; /* Mesmo tamanho quando recolhido */
+      height: 50px !important; /* Mesmo tamanho quando recolhido */
     }
 
     .logo {
@@ -129,6 +130,10 @@
       transition: all 0.3s ease;
     }
 
+    .sidebar.collapsed .sidebar-footer {
+      /* display: none; */
+    }
+
     .toggle-btn {
       background: rgba(255,255,255,0.1);
       border: none;
@@ -187,6 +192,7 @@
       border-radius: 4px;
     }
 
+    /* Inputs com texto em maiúsculas */
     input.uppercase {
       text-transform: uppercase;
     }
@@ -205,7 +211,7 @@
       background: #154360;
     }
 
-    /* Layout padrão dos cards */
+    /* Layout padrão dos cards (Pneus, Eletros, Bazar) */
     .cards-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -236,24 +242,6 @@
     .card-actions button {
       padding: 5px 10px;
       font-size: 12px;
-    }
-
-    /* Botão apagar vermelho */
-    .card-actions .btn-delete {
-      background: #e74c3c !important;
-    }
-
-    .card-actions .btn-delete:hover {
-      background: #c0392b !important;
-    }
-
-    /* Botão A3 laranja */
-    .card-actions .btn-a3 {
-      background: #f39c12 !important;
-    }
-
-    .card-actions .btn-a3:hover {
-      background: #e67e22 !important;
     }
 
     .card-meio {
@@ -329,16 +317,6 @@
     .observacao {
       font-size: 12px;
       font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-    }
-
-    .observacao span {
-      color: #1a5276;
-      font-weight: 900;
-      font-size: 14px;
     }
 
     .observacao2{
@@ -351,7 +329,6 @@
       z-index: 1;
       color: #fff;
       position: relative;
-      margin-top: 5px;
     }
 
     .img-baixo{
@@ -360,209 +337,101 @@
      z-index: -1;
      height: 1.3rem;
      color: #fff;
-     object-fit: cover;
     }
 
-    /* NOVO ESTILO PARA CARDS A3 */
-    .cards-container-a3 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 1200px;
+    /* Layout especial para Bicicletas */
+    .cards-container-especial {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    .card-a3 {
-      width: 60rem;
+    .card-especial {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      min-height: 80rem;
-      background: #fff;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-      position: relative;
-      margin-bottom: 2rem;
+      border: 2px solid #e74c3c;
     }
 
-    .card-a3 .card-actions {
-      position: absolute;
+    .card-especial .card-actions {
       top: 10px;
       right: 10px;
-      display: flex;
-      gap: 5px;
-      z-index: 100;
     }
 
-    .card-a3 .card-actions button {
-      padding: 8px 15px;
-      font-size: 14px;
-    }
-
-    /* Botão apagar vermelho para A3 também */
-    .card-a3 .card-actions .btn-delete {
-      background: #e74c3c !important;
-    }
-
-    .card-a3 .card-actions .btn-delete:hover {
-      background: #c0392b !important;
-    }
-
-    .card-a3 .topo-a3 {
-      height: 18rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 10px solid #fff;
-      padding: 0.5rem;
-    }
-
-    .card-a3 .topo-a3 img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .card-a3 .conteudo-a3 {
-      padding: 50px 30px;
-      flex: 1;
-    }
-
-    .card-a3 .titulo-a3 {
-      font-size: 90px;
-      width: 100%;
-      min-height: 18rem;
-      font-weight: 900;
-      line-height: 75px;
-      text-align: center;
-      word-wrap: break-word;
-    }
-
-    .card-a3 .valor-avista {
-      font-size: 52px;
-      font-weight: 800;
-      margin-bottom: 40px;
-      display: flex;
-      padding: 0 2.5rem;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .card-a3 .valor-avista span {
-      color: #e60000;
-      font-size: 8rem;
-      font-weight: 900;
-    }
-
-    .card-a3 .parcelamento {
-      display: flex;
-      align-items: flex-end;
-    }
-
-    .card-a3 .parcelamento .coluna {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-a3 .parcelamento .dezx {
-      font-size: 8rem;
-      font-weight: 900;
-      line-height: 140px;
-      width: 2rem;
-    }
-
-    .card-a3 .parcelamento .semjuros {
-      font-size: 1.4rem;
-      width: 18rem;
-      align-items: center;
-      font-weight: 800;
-      display: flex;
-      flex-direction: row;
-      
-    }
-
-    .card-a3 .parcelamento .semjuros span {
-      font-size: 2rem;
-      font-weight: 800;
-       display: inline-block; /* Necessário para o transform funcionar */
-  transform: scale(1.5, 2); /* scale(horizontal, vertical) - estica 1.5x na largura */
-  transform-origin: left;
-    }
-
-    .card-a3 .parcelamento .preco {
-      font-size: 170px;
-      font-weight: 900;
-      color: #e60000;
-      margin-left: 7rem;
-    }
-
-    /* Melhoria no footer do A3 */
-    .card-a3 .footer-texto {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      width: 100%;
-      height: 7vh;
-      margin-top: 20px;
-    }
-
-    .card-a3 .footer-texto img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .card-a3 .footer-texto h3 {
-      font-size: 2.5rem;
-      color: #fff;
-      font-weight: 300;
-      z-index: 2;
-      position: relative;
-      text-align: center;
-      margin: 0;
-      padding: 0 20px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
-
-    /* Seletor de categoria para A3 */
-    .categoria-selector {
-      background: #f8f9fa;
+    .card-especial .topo {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
       padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      border-left: 4px solid #1a5276;
+      margin-bottom: 0;
     }
 
-    .categoria-selector h3 {
-      margin-top: 0;
-      color: #1a5276;
+    .card-especial .topo img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
     }
 
-    .radio-group {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .radio-option {
+    .card-especial .produto {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #2c3e50;
+      background: #f8f9fa;
+      margin: 0;
+      min-height: 60px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      justify-content: center;
     }
 
-    .radio-option input[type="radio"] {
-      width: auto;
-      margin-right: 5px;
+    .card-especial .preco-container {
+      padding: 20px;
+      background: white;
+      text-align: center;
     }
 
-    .radio-option label {
-      display: inline;
-      font-weight: normal;
-      cursor: pointer;
+    .card-especial .preco {
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .card-especial .parcelado {
+      color: #27ae60;
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .card-especial .valor {
+      color: #e74c3c;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .card-especial .observacoes {
+      background: #34495e;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .card-especial .observacao {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      color: white;
+    }
+
+    .card-especial .observacao2 {
+      font-size: 12px;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+      color: #ecf0f1;
     }
 
     /* Configurações */
@@ -671,6 +540,14 @@
       background: #219653;
     }
 
+    .form-buttons .btn-import {
+      background: #f39c12;
+    }
+
+    .form-buttons .btn-import:hover {
+      background: #e67e22;
+    }
+    
     .repeat-container {
       background: #f8f9fa;
       padding: 15px;
@@ -698,8 +575,83 @@
     .repeat-form button {
       white-space: nowrap;
     }
+    
+    .alert {
+      background: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      border: 1px solid #ffeaa7;
+      display: none;
+    }
+    
+    .card-actions .btn-delete {
+      background: #e74c3c;
+    }
+    
+    .card-actions .btn-delete:hover {
+      background: #c0392b;
+    }
+    
+    .print-controls {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 10px;
+    }
 
-    /* Histórico */
+    /* Estilos de impressão simples */
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      
+      .card-actions {
+        display: none !important;
+      }
+      
+      .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      
+      .sidebar {
+        display: none !important;
+      }
+      
+      .main-content {
+        margin-left: 0 !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 70px;
+      }
+      
+      .sidebar-header h2,
+      .menu-item span {
+        display: none;
+      }
+      
+      .main-content {
+        margin-left: 70px;
+      }
+      
+      .cards-container,
+      .cards-container-especial {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-buttons {
+        flex-direction: column;
+      }
+    }
+
+    /* NOVOS ESTILOS PARA A SEÇÃO DE HISTÓRICO */
+    
+    /* Filtros do histórico */
     .history-filters {
       background: #f8f9fa;
       padding: 15px;
@@ -725,6 +677,7 @@
       display: block;
     }
     
+    /* Lista de histórico */
     .history-list {
       display: flex;
       flex-direction: column;
@@ -759,6 +712,7 @@
       margin-bottom: 20px;
     }
     
+    /* CARDS DO HISTÓRICO COM MESMO FORMATO DOS CARDS NORMAIS */
     .history-card {
       background: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -767,6 +721,13 @@
       min-height: 100px;
       display: flex;
       flex-direction: column;
+    }
+    
+    .history-card.history-card-especial {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 2px solid #e74c3c;
     }
     
     .history-card-actions {
@@ -802,11 +763,49 @@
       object-fit: cover;
     }
     
+    .history-card .topo-placeholder {
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(135deg, #1a5276, #2e86c1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px 5px 0 0;
+    }
+    
+    .history-card.history-card-especial .topo {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      padding: 15px;
+      margin-bottom: 0;
+    }
+    
+    .history-card.history-card-especial .topo img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+    
     .history-card .produto {
       margin-top: 10px;
       font-weight: 800;
       font-size: 16px;
       padding: 0 10px;
+    }
+    
+    .history-card.history-card-especial .produto {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #2c3e50;
+      background: #f8f9fa;
+      margin: 0;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
     .history-card .preco {
@@ -832,6 +831,30 @@
       font-weight: 800;
     }
     
+    .history-card.history-card-especial .preco-container {
+      padding: 20px;
+      background: white;
+      text-align: center;
+    }
+    
+    .history-card.history-card-especial .preco {
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+    }
+    
+    .history-card.history-card-especial .parcelado {
+      color: #27ae60;
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+    
+    .history-card.history-card-especial .valor {
+      color: #e74c3c;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    
     .history-card .observacao {
       font-size: 12px;
       font-weight: 800;
@@ -841,6 +864,27 @@
     .history-card .observacao2{
       font-weight: light;
       padding: 2px 0;
+    }
+    
+    .history-card.history-card-especial .observacoes {
+      background: #34495e;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .history-card.history-card-especial .observacao {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      color: white;
+    }
+    
+    .history-card.history-card-especial .observacao2 {
+      font-size: 12px;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+      color: #ecf0f1;
     }
     
     .history-card .timestamp {
@@ -864,6 +908,7 @@
       font-size: 9px;
     }
     
+    /* Botões de ação do grupo */
     .group-actions {
       display: flex;
       gap: 10px;
@@ -892,6 +937,7 @@
       background: #e67e22;
     }
     
+    /* Mensagem de histórico vazio */
     .empty-history {
       text-align: center;
       padding: 40px;
@@ -904,6 +950,7 @@
       color: #ddd;
     }
     
+    /* Botão de limpar histórico */
     .clear-history-btn {
       background: #e74c3c;
       margin-top: 20px;
@@ -913,88 +960,10 @@
       background: #c0392b;
     }
     
+    /* Menu inferior */
     .menu-bottom {
       margin-top: auto;
       border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Estilos de impressão */
-    @media print {
-      .no-print {
-        display: none !important;
-      }
-      
-      .card-actions {
-        display: none !important;
-      }
-      
-      .card, .card-a3 {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      
-      .sidebar {
-        display: none !important;
-      }
-      
-      .main-content {
-        margin-left: 0 !important;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 70px;
-      }
-      
-      .sidebar-header h2,
-      .menu-item span {
-        display: none;
-      }
-      
-      .main-content {
-        margin-left: 70px;
-      }
-      
-      .cards-container,
-      .cards-container-a3 {
-        grid-template-columns: 1fr;
-      }
-      
-      .form-buttons {
-        flex-direction: column;
-      }
-      
-      .card-a3 {
-        width: 100%;
-      }
-      
-      .card-a3 .titulo-a3 {
-        font-size: 40px;
-        line-height: 45px;
-        min-height: 10rem;
-      }
-      
-      .card-a3 .valor-avista {
-        font-size: 30px;
-      }
-      
-      .card-a3 .valor-avista span {
-        font-size: 4rem;
-      }
-      
-      .card-a3 .parcelamento .dezx {
-        font-size: 4rem;
-        line-height: 70px;
-      }
-      
-      .card-a3 .parcelamento .preco {
-        font-size: 80px;
-      }
-      
-      .card-a3 .footer-texto h3 {
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
@@ -1010,7 +979,7 @@
     
     <ul class="sidebar-menu">
       <li class="menu-item active" data-section="pneus">
-        <i class="fa-solid fa-truck-monster"></i>
+       <i class="fa-solid fa-truck-monster"></i>
         <span>Pneus</span>
       </li>
       <li class="menu-item" data-section="eletros">
@@ -1021,10 +990,10 @@
         <i class="fas fa-home"></i>
         <span>Bazar</span>
       </li>
-      <li class="menu-item" data-section="a3">
-        <i class="fas fa-file-image"></i>
-        <span>A3</span>
-      </li>
+      <!-- <li class="menu-item" data-section="bicicletas">
+        <i class="fas fa-bicycle"></i>
+        <span>Bicicletas</span>
+      </li> -->
     </ul>
     
     <div class="menu-bottom">
@@ -1052,7 +1021,7 @@
   <!-- Conteúdo Principal -->
   <div class="main-content" id="mainContent">
     <div class="container">
-      <!-- Seção Pneus -->
+      <!-- Seção Pneus (Ativa por padrão) -->
       <div class="content-section" id="pneus-section">
         <div class="form-container no-print">
           <h2><i class="fa-solid fa-truck-monster"></i> Adicionar Produto - Pneus</h2>
@@ -1075,6 +1044,7 @@
             <div class="form-buttons">
               <button type="submit">Adicionar Produto</button>
               <button type="button" class="btn-limpar-categoria btn-clear">Limpar Pneus</button>
+
               <button type="button" onclick="window.print()" class="btn-print">Imprimir Cards</button>
             </div>
           </form>
@@ -1187,49 +1157,29 @@
         </div>
       </div>
 
-      <!-- Seção A3 com seletor de categoria -->
-      <div class="content-section" id="a3-section" style="display: none;">
+      <!-- Seção Bicicletas -->
+      <div class="content-section" id="bicicletas-section" style="display: none;">
         <div class="form-container no-print">
-          <h2><i class="fas fa-file-image"></i> Adicionar Produto - A3</h2>
-          
-          <!-- Seletor de categoria para A3 -->
-          <div class="categoria-selector">
-            <h3>Selecione a categoria para a imagem do card:</h3>
-            <div class="radio-group">
-              <div class="radio-option">
-                <input type="radio" id="categoriaA3Bazar" name="categoriaA3" value="bazar" checked>
-                <label for="categoriaA3Bazar">Bazar</label>
-              </div>
-              <div class="radio-option">
-                <input type="radio" id="categoriaA3Eletros" name="categoriaA3" value="eletros">
-                <label for="categoriaA3Eletros">Eletros</label>
-              </div>
-              <div class="radio-option">
-                <input type="radio" id="categoriaA3Pneus" name="categoriaA3" value="pneus">
-                <label for="categoriaA3Pneus">Pneus</label>
-              </div>
-            </div>
-          </div>
-          
-          <form id="produtoFormA3">
+          <h2><i class="fas fa-bicycle"></i> Adicionar Produto - Bicicletas</h2>
+          <form id="produtoFormBicicletas">
             <div class="form-group">
-              <label for="descricaoA3">Descrição do Produto:</label>
-              <input type="text" id="descricaoA3" class="uppercase" placeholder="Ex: TV 55P LED PHILCO 4K" required>
+              <label for="descricaoBicicletas">Descrição do Produto:</label>
+              <input type="text" id="descricaoBicicletas" class="uppercase" placeholder="Ex: BICICLETA CALOI ARO 29" required>
             </div>
             
             <div class="form-group">
-              <label for="valorA3">Valor Total (R$):</label>
-              <input type="number" id="valorA3" step="0.01" min="0" placeholder="Ex: 1699.00" required>
+              <label for="valorBicicletas">Valor Total (R$):</label>
+              <input type="number" id="valorBicicletas" step="0.01" min="0" placeholder="Ex: 899.00" required>
             </div>
             
             <div class="form-group">
-              <label for="parcelasA3">Parcelas:</label>
-              <input type="number" id="parcelasA3" min="1" max="12" value="10" required>
+              <label for="parcelasBicicletas">Parcelas:</label>
+              <input type="number" id="parcelasBicicletas" min="1" max="12" value="6" required>
             </div>
             
             <div class="form-buttons">
               <button type="submit">Adicionar Produto</button>
-              <button type="button" class="btn-limpar-categoria btn-clear">Limpar A3</button>
+              <button type="button" class="btn-limpar-categoria btn-clear">Limpar Bicicletas</button>
               <button type="button" onclick="window.print()" class="btn-print">Imprimir Cards</button>
             </div>
           </form>
@@ -1239,20 +1189,20 @@
             <p>Adicione rapidamente várias cópias do mesmo produto:</p>
             <div class="repeat-form">
               <div class="form-group">
-                <label for="repeticoesA3">Quantidade de repetições:</label>
-                <input type="number" id="repeticoesA3" min="1" value="1">
+                <label for="repeticoesBicicletas">Quantidade de repetições:</label>
+                <input type="number" id="repeticoesBicicletas" min="1" value="1">
               </div>
               <button type="button" class="btn-repetir-categoria btn-repeat">Repetir Produto</button>
             </div>
           </div>
         </div>
 
-        <div class="cards-container-a3" id="cardsContainerA3">
-          <!-- Cards A3 serão gerados aqui -->
+        <div class="cards-container-especial" id="cardsContainerBicicletas">
+          <!-- Cards de bicicletas serão gerados aqui -->
         </div>
       </div>
 
-      <!-- Seção Histórico -->
+      <!-- NOVA SEÇÃO: Histórico -->
       <div class="content-section" id="historico-section" style="display: none;">
         <div class="form-container">
           <h2><i class="fas fa-history"></i> Histórico de Etiquetas</h2>
@@ -1267,7 +1217,7 @@
                   <option value="pneus">Pneus</option>
                   <option value="eletros">Eletros</option>
                   <option value="bazar">Bazar</option>
-                  <option value="a3">A3</option>
+                  <option value="bicicletas">Bicicletas</option>
                 </select>
               </div>
               
@@ -1317,8 +1267,8 @@
               <input type="text" id="observacao2Bazar" placeholder="Ex: Ou em até 4X nos demais cartões">
             </div>
             <div class="form-group">
-              <label for="observacao2A3">A3 - Detalhe:</label>
-              <input type="text" id="observacao2A3" placeholder="Ex: Ou em até 4X nos demais cartões" value="Ou em até 4X nos demais cartões">
+              <label for="observacao2Bicicletas">Bicicletas - Detalhe:</label>
+              <input type="text" id="observacao2Bicicletas" placeholder="Ex: Ou em até 4X nos demais cartões">
             </div>
             <button type="button" id="salvarObservacao2">Salvar Textos</button>
           </div>
@@ -1338,8 +1288,8 @@
               <input type="number" id="parcelasBazarConfig" min="1" max="12" value="4">
             </div>
             <div class="form-group">
-              <label for="parcelasA3Config">A3 (parcelas):</label>
-              <input type="number" id="parcelasA3Config" min="1" max="12" value="10">
+              <label for="parcelasBicicletasConfig">Bicicletas (parcelas):</label>
+              <input type="number" id="parcelasBicicletasConfig" min="1" max="12" value="6">
             </div>
             <button type="button" id="salvarParcelas">Salvar Parcelas</button>
           </div>
@@ -1366,14 +1316,15 @@
             </div>
 
             <div class="image-upload-group">
-              <h5>A3</h5>
-              <input type="file" class="imagem-categoria" data-categoria="a3" accept="image/*">
-              <img id="previewA3" class="image-preview" src="./img/pneus.png" alt="Prévia A3">
+              <h5>Bicicletas</h5>
+              <input type="file" class="imagem-categoria" data-categoria="bicicletas" accept="image/*">
+              <img id="previewBicicletas" class="image-preview" src="./img/bicicleta.png" alt="Prévia Bicicletas">
             </div>
 
             <button type="button" id="salvarImagens">Salvar Todas as Imagens</button>
           </div>
 
+          <!-- NOVO: Botão para resetar configurações -->
           <div class="config-group">
             <h4>Manutenção</h4>
             <button type="button" id="resetConfig" style="background: #e74c3c;">Resetar Todas as Configurações</button>
@@ -1438,26 +1389,27 @@
     </div>
   </div>
 
+
   <script>
-    // Sistema de configurações
+    // Sistema de configurações - VERSÃO COMPLETA
     const config = {
       observacao2: {
         pneus: "Ou em até 4X nos demais cartões",
         eletros: "Ou em até 4X nos demais cartões", 
         bazar: "Ou em até 4X nos demais cartões",
-        a3: "Ou em até 4X nos demais cartões"
+        bicicletas: "Ou em até 4X nos demais cartões"
       },
       parcelas: {
         pneus: 10,
         eletros: 4,
         bazar: 4,
-        a3: 10
+        bicicletas: 6
       },
       imagens: {
         pneus: "./img/pneus.png",
-        eletros: "./img/eletros.png",
+        eletros: "./img/eletro.png",
         bazar: "./img/bazar.jpeg",
-        a3: "./img/pneus.png"
+        bicicletas: "./img/bicicleta.png"
       }
     };
 
@@ -1466,11 +1418,14 @@
       pneus: [],
       eletros: [],
       bazar: [],
-      a3: []
+      bicicletas: []
     };
 
-    // Array para armazenar o histórico
+    // Array para armazenar o histórico - AGRUPADO POR DATA E CATEGORIA
     const historico = {};
+
+    // Categorias com layout especial
+    const categoriasEspeciais = ['bicicletas'];
 
     // Elementos DOM
     const sidebar = document.getElementById('sidebar');
@@ -1485,7 +1440,7 @@
     let categoriaAtual = 'pneus';
     let imagensParaSalvar = {};
 
-    // Carregar dados
+    // Carregar configurações e dados - VERSÃO CORRIGIDA
     function carregarDados() {
       const configSalva = localStorage.getItem('configAnuncios');
       const produtosSalvos = localStorage.getItem('produtosAnuncios');
@@ -1494,6 +1449,7 @@
       if (configSalva) {
         try {
           const configCarregada = JSON.parse(configSalva);
+          // Mesclar as configurações carregadas com as padrão
           Object.keys(configCarregada).forEach(chave => {
             if (config[chave]) {
               Object.assign(config[chave], configCarregada[chave]);
@@ -1526,7 +1482,7 @@
       renderizarTodosCards();
     }
 
-    // Salvar dados
+    // Salvar configurações e dados - VERSÃO CORRIGIDA
     function salvarDados() {
       try {
         localStorage.setItem('configAnuncios', JSON.stringify(config));
@@ -1539,8 +1495,9 @@
       }
     }
 
-    // Aplicar configurações
+    // Aplicar configurações carregadas - VERSÃO CORRIGIDA
     function aplicarConfiguracoes() {
+      // Observações - com verificação de existência
       if (document.getElementById('observacao2Pneus')) {
         document.getElementById('observacao2Pneus').value = config.observacao2.pneus || "";
       }
@@ -1550,10 +1507,11 @@
       if (document.getElementById('observacao2Bazar')) {
         document.getElementById('observacao2Bazar').value = config.observacao2.bazar || "";
       }
-      if (document.getElementById('observacao2A3')) {
-        document.getElementById('observacao2A3').value = config.observacao2.a3 || "";
+      if (document.getElementById('observacao2Bicicletas')) {
+        document.getElementById('observacao2Bicicletas').value = config.observacao2.bicicletas || "";
       }
       
+      // Parcelas - com verificação de existência
       if (document.getElementById('parcelasPneusConfig')) {
         document.getElementById('parcelasPneusConfig').value = config.parcelas.pneus || 10;
       }
@@ -1563,23 +1521,26 @@
       if (document.getElementById('parcelasBazarConfig')) {
         document.getElementById('parcelasBazarConfig').value = config.parcelas.bazar || 4;
       }
-      if (document.getElementById('parcelasA3Config')) {
-        document.getElementById('parcelasA3Config').value = config.parcelas.a3 || 10;
+      if (document.getElementById('parcelasBicicletasConfig')) {
+        document.getElementById('parcelasBicicletasConfig').value = config.parcelas.bicicletas || 6;
       }
       
+      // Imagens - com fallback para imagens padrão
       const imagensPadrao = {
-        pneus: "./img/pneus.png",
-        eletros: "./img/eletros.png",
+         pneus: "./img/pneus.png",
+        eletros: "./img/eletro.png",
         bazar: "./img/bazar.jpeg",
-        a3: "./img/pneus.png"
+        bicicletas: "./img/bicicleta.png"
       };
       
+      // Garantir que todas as imagens existam na configuração
       Object.keys(imagensPadrao).forEach(categoria => {
         if (!config.imagens[categoria]) {
           config.imagens[categoria] = imagensPadrao[categoria];
         }
       });
       
+      // Aplicar imagens aos previews
       if (document.getElementById('previewPneus')) {
         document.getElementById('previewPneus').src = config.imagens.pneus;
       }
@@ -1589,10 +1550,11 @@
       if (document.getElementById('previewBazar')) {
         document.getElementById('previewBazar').src = config.imagens.bazar;
       }
-      if (document.getElementById('previewA3')) {
-        document.getElementById('previewA3').src = config.imagens.a3;
+      if (document.getElementById('previewBicicletas')) {
+        document.getElementById('previewBicicletas').src = config.imagens.bicicletas;
       }
       
+      // Aplicar parcelas padrão nos formulários - com verificação
       if (document.getElementById('parcelasPneus')) {
         document.getElementById('parcelasPneus').value = config.parcelas.pneus || 10;
       }
@@ -1602,8 +1564,8 @@
       if (document.getElementById('parcelasBazar')) {
         document.getElementById('parcelasBazar').value = config.parcelas.bazar || 4;
       }
-      if (document.getElementById('parcelasA3')) {
-        document.getElementById('parcelasA3').value = config.parcelas.a3 || 10;
+      if (document.getElementById('parcelasBicicletas')) {
+        document.getElementById('parcelasBicicletas').value = config.parcelas.bicicletas || 6;
       }
     }
 
@@ -1632,18 +1594,19 @@
         
         categoriaAtual = this.getAttribute('data-section');
         
+        // Se for a seção de histórico, renderizar o histórico
         if (categoriaAtual === 'historico') {
           renderizarHistorico();
         }
       });
     });
 
-    // Configurações - Salvar observações
+    // Configurações - Salvar observações individuais
     document.getElementById('salvarObservacao2').addEventListener('click', function() {
       config.observacao2.pneus = document.getElementById('observacao2Pneus').value;
       config.observacao2.eletros = document.getElementById('observacao2Eletros').value
       config.observacao2.bazar = document.getElementById('observacao2Bazar').value
-      config.observacao2.a3 = document.getElementById('observacao2A3').value
+      config.observacao2.bicicletas = document.getElementById('observacao2Bicicletas').value
       
       salvarDados();
       renderizarTodosCards();
@@ -1655,18 +1618,19 @@
       config.parcelas.pneus = parseInt(document.getElementById('parcelasPneusConfig').value);
       config.parcelas.eletros = parseInt(document.getElementById('parcelasEletrosConfig').value);
       config.parcelas.bazar = parseInt(document.getElementById('parcelasBazarConfig').value);
-      config.parcelas.a3 = parseInt(document.getElementById('parcelasA3Config').value);
+      config.parcelas.bicicletas = parseInt(document.getElementById('parcelasBicicletasConfig').value);
       
+      // Atualizar formulários
       document.getElementById('parcelasPneus').value = config.parcelas.pneus;
       document.getElementById('parcelasEletros').value = config.parcelas.eletros;
       document.getElementById('parcelasBazar').value = config.parcelas.bazar;
-      document.getElementById('parcelasA3').value = config.parcelas.a3;
+      document.getElementById('parcelasBicicletas').value = config.parcelas.bicicletas;
       
       salvarDados();
       alert('Parcelas salvas com sucesso!');
     });
 
-    // Configurações - Upload de imagens
+    // Configurações - Upload de imagens por categoria
     document.querySelectorAll('.imagem-categoria').forEach(input => {
       input.addEventListener('change', function(e) {
         const file = e.target.files[0];
@@ -1675,8 +1639,7 @@
         if (file) {
           const reader = new FileReader();
           reader.onload = function(e) {
-            const previewId = `preview${categoria.charAt(0).toUpperCase() + categoria.slice(1)}`;
-            document.getElementById(previewId).src = e.target.result;
+            document.getElementById(`preview${categoria.charAt(0) + categoria.slice(1)}`).src = e.target.result;
             imagensParaSalvar[categoria] = e.target.result;
           }
           reader.readAsDataURL(file);
@@ -1684,7 +1647,7 @@
       });
     });
 
-    // Configurações - Salvar imagens
+    // Configurações - Salvar todas as imagens - VERSÃO CORRIGIDA
     document.getElementById('salvarImagens').addEventListener('click', function() {
       if (Object.keys(imagensParaSalvar).length > 0) {
         Object.keys(imagensParaSalvar).forEach(categoria => {
@@ -1703,19 +1666,23 @@
     // Resetar configurações
     document.getElementById('resetConfig').addEventListener('click', function() {
       if (confirm('Tem certeza que deseja resetar TODAS as configurações para os valores padrão? Esta ação não pode ser desfeita.')) {
+        // Restaurar configurações padrão
         config.observacao2 = {
           pneus: "Ou em até 4X nos demais cartões",
           eletros: "Ou em até 4X nos demais cartões", 
           bazar: "Ou em até 4X nos demais cartões",
-          a3: "Ou em até 4X nos demais cartões"
+          bicicletas: "Ou em até 4X nos demais cartões"
         };
         
         config.parcelas = {
           pneus: 10,
           eletros: 4,
           bazar: 4,
-          a3: 10
+          bicicletas: 6
         };
+        
+        // Manter as imagens atuais ou restaurar padrão
+        // config.imagens = { ... }; // Descomente se quiser resetar imagens também
         
         aplicarConfiguracoes();
         salvarDados();
@@ -1732,12 +1699,13 @@
       return valorTotal / parcelas;
     }
 
-    // Adicionar produto ao histórico
+    // Adicionar produto ao histórico - AGRUPADO POR DATA E CATEGORIA
     function adicionarAoHistorico(categoria, produto) {
       const timestamp = new Date();
       const dataFormatada = timestamp.toLocaleDateString('pt-BR');
       const horaFormatada = timestamp.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
       
+      // Criar estrutura se não existir
       if (!historico[dataFormatada]) {
         historico[dataFormatada] = {};
       }
@@ -1746,12 +1714,14 @@
         historico[dataFormatada][categoria] = [];
       }
       
+      // Adicionar produto ao grupo
       historico[dataFormatada][categoria].unshift({
         produto,
         timestamp: timestamp.getTime(),
         horaFormatada
       });
       
+      // Limitar histórico a 100 itens por categoria por data
       Object.keys(historico).forEach(data => {
         Object.keys(historico[data]).forEach(cat => {
           if (historico[data][cat].length > 100) {
@@ -1763,158 +1733,91 @@
       salvarDados();
     }
 
-    // Função: Converter para A3
-    function converterParaA3(produto, categoria) {
-      const categoriaSelecionada = document.querySelector('input[name="categoriaA3"]:checked')?.value || 'bazar';
-      
-      const novoProduto = {
-        descricao: produto.descricao,
-        valor: produto.valor,
-        parcelas: produto.parcelas,
-        categoriaImagem: categoriaSelecionada
-      };
-      
-      produtos.a3.unshift(novoProduto);
-      renderizarCards('a3');
-      adicionarAoHistorico('a3', novoProduto);
-      salvarDados();
-    }
-
     function renderizarCards(categoria) {
-      if (categoria === 'a3') {
-        renderizarCardsA3();
-        return;
-      }
-      
       const container = document.getElementById(`cardsContainer${categoria.charAt(0).toUpperCase() + categoria.slice(1)}`);
-      if (!container) return;
-      
       container.innerHTML = '';
+      
+      const isEspecial = categoriasEspeciais.includes(categoria);
       
       produtos[categoria].forEach((produto, index) => {
         const valorParcela = calcularParcela(produto.valor, produto.parcelas);
         const valorTotalFormatado = formatarValor(produto.valor);
         const valorParcelaFormatado = formatarValor(valorParcela);
         
-        const cardHTML = `
-          <div class="card">
-            <div class="card-actions no-print">
-              <button class="btn-editar" data-categoria="${categoria}" data-index="${index}">Editar</button>
-              <button class="btn-delete" data-categoria="${categoria}" data-index="${index}">Apagar</button>
-              <button class="btn-a3" data-categoria="${categoria}" data-index="${index}" title="Converter para A3">A3</button>
-            </div>
-            <div class="card-meio">
+        let cardHTML = '';
+        
+        if (isEspecial) {
+          // Layout especial para Bicicletas
+          cardHTML = `
+            <div class="card-especial">
+              <div class="card-actions no-print">
+                <button class="btn-editar" data-categoria="${categoria}" data-index="${index}">Editar</button>
+                <button class="btn-delete" data-categoria="${categoria}" data-index="${index}">Apagar</button>
+              </div>
               <div class="topo">
-                <div class="topo-placeholder" style="display: none;">
-                  <div class="numero">CARTÃO PASSAÍ</div>
-                  <div class="texto">PARCEIRO DA SUA CONQUISTA</div>
-                </div>
-                <img src="${config.imagens[categoria]}" alt="${categoria}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <img src="${config.imagens[categoria]}" alt="${categoria}" onerror="this.style.display='none';" />
               </div>
               <div class="produto">
                 ${produto.descricao.toUpperCase()}
               </div>
-              <div class="preco">
-                <span class="parcelado">${produto.parcelas}X R$ ${valorParcelaFormatado}</span>
-                <span class="valor">R$ ${valorTotalFormatado}</span>
+              <div class="preco-container">
+                <div class="preco">
+                  <span class="parcelado">${produto.parcelas}X R$ ${valorParcelaFormatado}</span>
+                  <span class="valor">R$ ${valorTotalFormatado}</span>
+                </div>
               </div>
-              <div class="observacao">
-                SEM JUROS NO CARTÃO <span>PASSAÍ</span>
-              </div>
-              <div class="observacao2">
-                <img src="Icon/footer.jpeg" alt="" class="img-baixo">
-                ${config.observacao2[categoria]}
+              <div class="observacoes">
+                <div class="observacao">
+                  SEM JUROS NO CARTÃO PASSAÍ
+                </div>
+                <div class="observacao2">
+                    <img src="Icon/footer.jpeg alt="" width="20%" class="img-baixo"></img>
+                  ${config.observacao2[categoria]}
+                </div>
               </div>
             </div>
-          </div>
-        `;
-        
-        const card = document.createElement('div');
-        card.innerHTML = cardHTML;
-        container.appendChild(card);
-      });
-      
-      // Event listeners para os botões
-      container.querySelectorAll('.btn-editar').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const categoria = this.getAttribute('data-categoria');
-          const index = parseInt(this.getAttribute('data-index'));
-          abrirModalEditar(categoria, index);
-        });
-      });
-      
-      container.querySelectorAll('.btn-delete').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const categoria = this.getAttribute('data-categoria');
-          const index = parseInt(this.getAttribute('data-index'));
-          abrirModalApagar(categoria, index);
-        });
-      });
-      
-      container.querySelectorAll('.btn-a3').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const categoria = this.getAttribute('data-categoria');
-          const index = parseInt(this.getAttribute('data-index'));
-          const produto = produtos[categoria][index];
-          converterParaA3(produto, categoria);
-          alert(`Produto "${produto.descricao}" convertido para A3 com sucesso!`);
-        });
-      });
-    }
-
-    // Renderizar cards A3 (SEM o botão Etiqueta)
-    function renderizarCardsA3() {
-      const container = document.getElementById('cardsContainerA3');
-      if (!container) return;
-      
-      container.innerHTML = '';
-      
-      produtos.a3.forEach((produto, index) => {
-        const valorParcela = calcularParcela(produto.valor, produto.parcelas);
-        const valorTotalFormatado = formatarValor(produto.valor);
-        const valorParcelaFormatado = formatarValor(valorParcela);
-        
-        const imagemCategoria = produto.categoriaImagem || 'bazar';
-        
-        const cardHTML = `
-          <div class="card-a3">
-            <div class="card-actions no-print">
-              <button class="btn-editar" data-categoria="a3" data-index="${index}">Editar</button>
-              <button class="btn-delete" data-categoria="a3" data-index="${index}">Apagar</button>
-            </div>
-            <div class="topo-a3">
-              <img src="${config.imagens[imagemCategoria]}" class="img-topo" alt="A3" onerror="this.style.display='none';" />
-            </div>
-            <div class="conteudo-a3">
-              <div class="titulo-a3">
-                ${produto.descricao.toUpperCase()}
+          `;
+        } else {
+          // Layout padrão para Pneus, Eletros, Bazar
+          cardHTML = `
+            <div class="card">
+              <div class="card-actions no-print">
+                <button class="btn-editar" data-categoria="${categoria}" data-index="${index}">Editar</button>
+                <button class="btn-delete" data-categoria="${categoria}" data-index="${index}">Apagar</button>
               </div>
-              <div class="valor-avista">
-                VALOR À VISTA: R$ <span>${valorTotalFormatado}</span>
-              </div>
-              <div class="parcelamento">
-                <div class="coluna">
-                  <div class="dezx">${produto.parcelas}X</div>
-                  <div class="semjuros">SEM JUROS NO CARTÃO <span>PASSAÍ</span></div>
+              <div class="card-meio">
+                <div class="topo">
+                  <div class="topo-placeholder" style="display: none;">
+                    <div class="numero">CARTÃO PASSAÍ</div>
+                    <div class="texto">PARCEIRO DA SUA CONQUISTA</div>
+                  </div>
+                  <img src="${config.imagens[categoria]}" alt="${categoria}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                </div>
+                <div class="produto">
+                  ${produto.descricao.toUpperCase()}
                 </div>
                 <div class="preco">
-                  ${valorParcelaFormatado}
+                  <span class="parcelado">${produto.parcelas}X R$ ${valorParcelaFormatado}</span>
+                  <span class="valor">R$ ${valorTotalFormatado}</span>
+                </div>
+                <div class="observacao">
+                  SEM JUROS NO CARTÃO PASSAÍ
+                </div>
+                <div class="observacao2">
+                  <img src="Icon/footer.jpeg" alt="" width="20%" class="img-baixo"></img>
+                  ${config.observacao2[categoria]}
                 </div>
               </div>
             </div>
-            <div class="footer-texto">
-              <img src="Icon/footer.jpeg" alt="">
-              <h3>${config.observacao2.a3}</h3>
-            </div>
-          </div>
-        `;
+          `;
+        }
         
         const card = document.createElement('div');
         card.innerHTML = cardHTML;
         container.appendChild(card);
       });
       
-      // Event listeners para os botões
+      // Adicionar event listeners aos botões
       container.querySelectorAll('.btn-editar').forEach(btn => {
         btn.addEventListener('click', function() {
           const categoria = this.getAttribute('data-categoria');
@@ -1945,13 +1848,9 @@
         parcelas
       };
       
-      if (categoria === 'a3') {
-        const categoriaImagem = document.querySelector('input[name="categoriaA3"]:checked')?.value || 'bazar';
-        produto.categoriaImagem = categoriaImagem;
-      }
-      
       produtos[categoria].unshift(produto);
       
+      // Adicionar ao histórico
       adicionarAoHistorico(categoria, produto);
       
       renderizarCards(categoria);
@@ -1959,13 +1858,15 @@
       return true;
     }
 
-    // Funções para o histórico
+    // Funções para o histórico - AGRUPADO POR DATA E CATEGORIA
     function renderizarHistorico() {
       const container = document.getElementById('historyList');
       const emptyMessage = document.getElementById('emptyHistory');
       
+      // Limpar container
       container.innerHTML = '';
       
+      // Verificar se há histórico
       if (Object.keys(historico).length === 0) {
         emptyMessage.style.display = 'block';
         return;
@@ -1973,15 +1874,19 @@
       
       emptyMessage.style.display = 'none';
       
+      // Aplicar filtros
       const categoriaFiltro = document.getElementById('filterCategoria').value;
       const dataFiltro = document.getElementById('filterData').value;
       const textoFiltro = document.getElementById('filterTexto').value.toLowerCase();
       
+      // Ordenar datas (mais recentes primeiro)
       const datasOrdenadas = Object.keys(historico).sort((a, b) => {
         return new Date(b.split('/').reverse().join('-')) - new Date(a.split('/').reverse().join('-'));
       });
       
+      // Renderizar grupos por data
       datasOrdenadas.forEach(data => {
+        // Verificar se deve exibir esta data com base no filtro
         if (dataFiltro) {
           const dataFiltroFormatada = new Date(dataFiltro).toLocaleDateString('pt-BR');
           if (data !== dataFiltroFormatada) {
@@ -1992,13 +1897,16 @@
         let temConteudoParaData = false;
         let gruposHTML = '';
         
+        // Para cada categoria nesta data
         Object.keys(historico[data]).forEach(categoria => {
+          // Verificar filtro de categoria
           if (categoriaFiltro !== 'todas' && categoria !== categoriaFiltro) {
             return;
           }
           
           const produtosCategoria = historico[data][categoria];
           
+          // Aplicar filtro de texto
           const produtosFiltrados = produtosCategoria.filter(item => {
             return !textoFiltro || item.produto.descricao.toLowerCase().includes(textoFiltro);
           });
@@ -2009,6 +1917,7 @@
           
           temConteudoParaData = true;
           
+          // Criar grupo para esta categoria
           const grupoHTML = `
             <div class="history-group">
               <div class="history-group-header">
@@ -2036,6 +1945,7 @@
         }
       });
       
+      // Adicionar event listeners aos botões de restaurar
       container.querySelectorAll('.btn-restore-all').forEach(btn => {
         btn.addEventListener('click', function() {
           const data = this.getAttribute('data-data');
@@ -2044,6 +1954,7 @@
         });
       });
       
+      // Adicionar event listeners aos botões de restaurar individuais
       container.querySelectorAll('.btn-restore-single').forEach(btn => {
         btn.addEventListener('click', function() {
           const data = this.getAttribute('data-data');
@@ -2058,25 +1969,36 @@
       const valorParcela = calcularParcela(item.produto.valor, item.produto.parcelas);
       const valorTotalFormatado = formatarValor(item.produto.valor);
       const valorParcelaFormatado = formatarValor(valorParcela);
+      const isEspecial = categoriasEspeciais.includes(categoria);
       
       let cardHTML = '';
       
-      if (categoria === 'a3') {
-        const imagemCategoria = item.produto.categoriaImagem || 'bazar';
+      if (isEspecial) {
+        // Layout especial para Bicicletas
         cardHTML = `
-          <div class="history-card" style="width:100%; min-height:30rem;">
+          <div class="history-card history-card-especial">
             <div class="history-card-actions no-print">
-              <button class="btn-restore-single" data-data="${Object.keys(historico).find(data => historico[data][categoria] && historico[data][categoria].includes(item))}" data-categoria="${categoria}" data-index="${historico[Object.keys(historico).find(data => historico[data][categoria] && historico[data][categoria].includes(item))][categoria].indexOf(item)}">Restaurar</button>
+              <button class="btn-restore-single btn-restore-single" data-data="${Object.keys(historico).find(data => historico[data][categoria] && historico[data][categoria].includes(item))}" data-categoria="${categoria}" data-index="${historico[Object.keys(historico).find(data => historico[data][categoria] && historico[data][categoria].includes(item))][categoria].indexOf(item)}">Restaurar</button>
             </div>
-            <div style="padding: 20px;">
-              <div style="width:100%; height:8rem; background:#f0f0f0; display:flex; align-items:center; justify-content:center; margin-bottom:15px;">
-                <img src="${config.imagens[imagemCategoria]}" style="max-width:100%; max-height:100%; object-fit:contain;" alt="A3">
+            <div class="topo">
+              <img src="${config.imagens[categoria]}" alt="${categoria}" onerror="this.style.display='none';" />
+            </div>
+            <div class="produto">
+              ${item.produto.descricao}
+            </div>
+            <div class="preco-container">
+              <div class="preco">
+                <span class="parcelado">${item.produto.parcelas}X R$ ${valorParcelaFormatado}</span>
+                <span class="valor">R$ ${valorTotalFormatado}</span>
               </div>
-              <div style="font-size:24px; font-weight:900; margin-bottom:15px; text-align:center;">${item.produto.descricao}</div>
-              <div style="font-size:20px; margin-bottom:15px;">VALOR À VISTA: < style="color:#e60000; font-size:28px;"> <span style="font-size: 1rem;">R$</span> ${valorTotalFormatado}</div>
-              <div style="display:flex; align-items:flex-end;">
-                <div style="font-size:28px; font-weight:900; margin-right:15px;">${item.produto.parcelas}X</div>
-                <div style="font-size:36px; font-weight:900; color:#e60000;">R$ ${valorParcelaFormatado}</div>
+            </div>
+            <div class="observacoes">
+              <div class="observacao">
+                SEM JUROS NO CARTÃO PASSAÍ
+              </div>
+              <div class="observacao2">
+                <img src="Icon/footer.jpeg" alt="" width="20%" class="img-baixo"></img>
+                ${config.observacao2[categoria]}
               </div>
             </div>
             <div class="timestamp">
@@ -2086,6 +2008,7 @@
           </div>
         `;
       } else {
+        // Layout padrão para Pneus, Eletros, Bazar
         cardHTML = `
           <div class="history-card">
             <div class="history-card-actions no-print">
@@ -2107,7 +2030,7 @@
                 <span class="valor">R$ ${valorTotalFormatado}</span>
               </div>
               <div class="observacao">
-                SEM JUROS NO CARTÃO <span>PASSAÍ</span>
+                SEM JUROS NO CARTÃO PASSAÍ
               </div>
               <div class="observacao2">
                 <img src="Icon/footer.jpeg" alt="" width="20%" class="img-baixo"></img>
@@ -2133,23 +2056,40 @@
         return;
       }
       
+      // Adicionar todos os produtos do grupo à categoria correspondente
       produtosGrupo.forEach(item => {
         produtos[categoria].unshift(item.produto);
       });
       
+      // Renderizar os cards da categoria
       renderizarCards(categoria);
+      
+      // Salvar dados
       salvarDados();
+      
+      // Mostrar mensagem de sucesso
       alert(`${produtosGrupo.length} produtos de ${categoria} restaurados com sucesso!`);
+      
+      // Atualizar histórico
       renderizarHistorico();
     }
     
     function restaurarItemDoHistorico(data, categoria, index) {
       const item = historico[data][categoria][index];
       
+      // Adicionar o produto à categoria correspondente
       produtos[categoria].unshift(item.produto);
+      
+      // Renderizar os cards da categoria
       renderizarCards(categoria);
+      
+      // Salvar dados
       salvarDados();
+      
+      // Mostrar mensagem de sucesso
       alert(`Produto "${item.produto.descricao}" restaurado com sucesso!`);
+      
+      // Atualizar histórico
       renderizarHistorico();
     }
 
@@ -2190,16 +2130,15 @@
       }
     });
 
-    // Formulário A3
-    document.getElementById('produtoFormA3').addEventListener('submit', function(e) {
+    document.getElementById('produtoFormBicicletas').addEventListener('submit', function(e) {
       e.preventDefault();
-      const descricao = document.getElementById('descricaoA3').value.toUpperCase();
-      const valor = parseFloat(document.getElementById('valorA3').value);
-      const parcelas = parseInt(document.getElementById('parcelasA3').value);
+      const descricao = document.getElementById('descricaoBicicletas').value.toUpperCase();
+      const valor = parseFloat(document.getElementById('valorBicicletas').value);
+      const parcelas = parseInt(document.getElementById('parcelasBicicletas').value);
       
-      if (adicionarProduto('a3', descricao, valor, parcelas)) {
+      if (adicionarProduto('bicicletas', descricao, valor, parcelas)) {
         this.reset();
-        document.getElementById('parcelasA3').value = config.parcelas.a3;
+        document.getElementById('parcelasBicicletas').value = config.parcelas.bicicletas;
       }
     });
 
@@ -2233,6 +2172,7 @@
         document.getElementById('modalLimpar').style.display = 'block';
       });
     });
+
 
     // Event Listeners para filtros do histórico
     document.getElementById('filterCategoria').addEventListener('change', renderizarHistorico);
@@ -2285,6 +2225,7 @@
       }
     }
 
+    // Event Listeners para modais
     document.getElementById('cancelarLimpar').addEventListener('click', fecharModais);
     document.getElementById('confirmarLimpar').addEventListener('click', function() {
       if (categoriaParaLimpar) {
@@ -2314,16 +2255,12 @@
       const parcelas = parseInt(document.getElementById('editarParcelas').value);
       
       produtos[categoria][index] = { descricao, valor, parcelas };
-      
-      if (categoria === 'a3' && produtos[categoria][index].categoriaImagem) {
-        produtos[categoria][index].categoriaImagem = produtos[categoria][index].categoriaImagem;
-      }
-      
       renderizarCards(categoria);
       salvarDados();
       fecharModais();
     });
 
+    // Fechar modais ao clicar fora
     window.addEventListener('click', function(e) {
       if (e.target.classList.contains('modal')) {
         fecharModais();
